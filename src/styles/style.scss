@@ -1,0 +1,111 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+  background: #eaeaea;
+}
+
+.content {
+  max-width: 1400px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  .title {
+    margin-bottom: 2rem;
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 200;
+    }
+  }
+
+  .light {
+    font-weight: lighter;
+    color: #53555a;
+  }
+
+  .candidates {
+    transition: 0.3s;
+  }
+
+  .candidate {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: white;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+    border: 3px solid transparent;
+    position: relative;
+
+    &:first-child {
+      border-color: #748FFC;
+    }
+
+    &.not-voted {
+      opacity: 0.3;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .vote-lines {
+      width: 45%;
+
+      .line {
+        margin-top: 0.75rem;
+        width: 100%;
+        background: #e6e6e6;
+        position: relative;
+
+        .procent {
+          position: absolute;
+          top: 50%;
+          right: -15%;
+          font-size: 0.9rem;
+          transform: translateY(-50%);
+          margin: 0;
+        }
+      }
+    }
+
+    .president {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      margin: 0;
+      font-weight: bold;
+      color: #4C6EF5;
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 1rem;
+
+    .candidate {
+      padding: 1rem;
+
+      .vote-lines {width: 80%; .line .procent {right: -20%;}}
+      .president {
+        position: relative;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        margin-top: 1rem;
+      }
+    }
+  }
+}
